@@ -18,6 +18,18 @@ $sites = [
 ];
 ```
 
+## Why use this?
+
+This addon was born of the desire to be able to run multiple copies of the
+same DDEV project on the same host simultaneously. In order to do this, you
+must have unique hostnames for each DDEV project/multisite directory
+combination.
+
+If you do not need to accommodate this workflow, you may not need this addon,
+and can instead manually maintain `additional_hostnames` for your site
+directories. This workflow requires that you only have one instance of the same
+DDEV project running on your host at any given time.
+
 ## Installation
 
 ```bash
