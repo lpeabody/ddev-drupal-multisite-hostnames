@@ -36,8 +36,15 @@ of `ddev start`.
 2. `ddev status` and confirm that there are URLs listed for your multisite
    directories.
 
+> [!IMPORTANT]
+> Every time you add a new multisite directory, you will need to re-run
+> `ddev multisite-start` in order to update the hostnames listed in
+> `.ddev/config.drupal_multisite_hosts.yaml` and apply the changes to your
+> DDEV environment. Run `ddev status` afterward to confirm the new URL
+> for the multisite(s) is listed.
+
 > [!NOTE]
-> Note that site directories named `default` and `settings` are ignored.
+> Site directories named `default` and `settings` are ignored.
 > The `default` directory is not necessary to set in most, if not all,
 > circumstances in sites.php. The `settings` directory is conventionally used
 > not as a site directory but as a location to store global settings files used
