@@ -21,7 +21,7 @@ $sites = [
 ## Installation
 
 ```bash
-ddev add-on get git@github.com:lpeabody/ddev-drupal-multisite-hostnames.git
+ddev add-on get lpeabody/ddev-drupal-multisite-hostnames
 ```
 
 - `drupal_multisite/sites.ddev_multisite.php` is copied to `sites/sites.ddev_multisite.php`
