@@ -8,6 +8,13 @@ name: drupal-multisite-hostnames
 # DDEV environment variables can be interpolated into these actions
 # pre_install_actions are executed in the context of the target project's root directory.
 pre_install_actions:
+  - |
+    #ddev-description:Write initial hostname file
+    cat > .ddev/config.drupal_multisite_hosts.yaml <<EOL
+    #ddev-generated
+    additional_hostnames:
+      - '*.${DDEV_SITENAME}'
+    EOL
 # - |
 #   #ddev-description:Check architecture type for incompatible arm64 type
 #   if [ "$(uname -m)" = "arm64" -o "$(uname -m)" = "aarch64" ]; then

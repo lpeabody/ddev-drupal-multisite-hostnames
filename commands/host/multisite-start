@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
+#ddev-generated
 
-# Define the directory to search
-directory="$DDEV_DOCROOT/sites"
-
-# Find directories excluding 'settings' and 'default'
-hostnames=$(find "$directory" -maxdepth 1 -mindepth 1 -type d ! -name 'settings' ! -name 'default' -exec basename {} \; | sed 's/_/-/g')
-
-# Create the YAML file
 cat > .ddev/config.drupal_multisite_hosts.yaml <<EOL
 #ddev-generated
 additional_hostnames:
-$(for hostname in $hostnames; do echo "  - $hostname-$DDEV_SITENAME"; done)
+  - '*.$DDEV_SITENAME'
 EOL
 
 ddev start "$@"

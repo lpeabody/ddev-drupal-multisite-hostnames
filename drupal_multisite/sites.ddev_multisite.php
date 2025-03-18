@@ -19,7 +19,7 @@ if (getenv('IS_DDEV_PROJECT')) {
   $ddev_virtual_host = "$ddev_project.$ddev_tld";
   foreach ($multisite_directories as $site_dir) {
     $prefix = str_replace('_', '-', $site_dir);
-    $site_domain = "$prefix-$ddev_virtual_host";
+    $site_domain = "$prefix.$ddev_virtual_host";
     $sites[$site_domain] = $site_dir;
   }
 }

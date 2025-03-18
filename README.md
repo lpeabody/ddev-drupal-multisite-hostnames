@@ -14,7 +14,7 @@ Then the `$sites` array will look like the following:
 
 ```php
 $sites = [
-  'other-site-my-ddev-project.ddev.site' => 'other_site',
+  'other-site.my-ddev-project.ddev.site' => 'other_site',
 ];
 ```
 
@@ -38,22 +38,21 @@ ddev add-on get lpeabody/ddev-drupal-multisite-hostnames
 
 - `drupal_multisite/sites.ddev_multisite.php` is copied to `sites/sites.ddev_multisite.php`
 - A command `multisite-start` is added to `.ddev/commands/host/multisite-start`
+- `config.drupal_multisite_hosts.yaml` is added to `.ddev`
 
 ## Usage
 
-In order to make DDEV aware of the hostnames, use `ddev multisite-start` instead
-of `ddev start`.
+Just install the addon and then run `ddev start` to apply the new hostname
+pattern, which by default is calculated using the pattern `*.$DDEV_SITENAME`.
 
-1. `ddev multisite-start`
-2. `ddev status` and confirm that there are URLs listed for your multisite
-   directories.
+1. Install addon.
+2. `ddev start`
+3. `ddev status` and confirm that the wildcard site name URL was added.
 
 > [!IMPORTANT]
-> Every time you add a new multisite directory, you will need to re-run
-> `ddev multisite-start` in order to update the hostnames listed in
-> `.ddev/config.drupal_multisite_hosts.yaml` and apply the changes to your
-> DDEV environment. Run `ddev status` afterward to confirm the new URL
-> for the multisite(s) is listed.
+> If you change the project name, and therefore the site name, you must run
+> `ddev multisite-start` to regenerate the additional hostname file and apply
+> it.
 
 > [!NOTE]
 > Site directories named `default` and `settings` are ignored.
