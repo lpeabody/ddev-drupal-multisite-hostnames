@@ -49,6 +49,10 @@ pattern, which by default is calculated using the pattern `*.$DDEV_SITENAME`.
 2. `ddev start`
 3. `ddev status` and confirm that the wildcard site name URL was added.
 
+Referring back to the example above, if you have the `other_site` directory
+then you should be able to now access that site via 
+https://other-site.my-ddev-project.ddev.site.
+
 > [!IMPORTANT]
 > If you change the project name, and therefore the site name, you must run
 > `ddev multisite-start` to regenerate the additional hostname file and apply
